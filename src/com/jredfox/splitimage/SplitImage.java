@@ -9,20 +9,20 @@ public class SplitImage {
 	
 	public static void main(String[] args)
 	{
-		long start = System.currentTimeMillis();
 		if(args.length >= 3)
 		{
+			long start = System.currentTimeMillis();
 			File dirImage = new File(args[0].replace("\"", ""));
 			int colums = Integer.parseInt(args[1]);
 			int rows = Integer.parseInt(args[2]);
 			File out = args.length > 3 ? new File(args[3].replace("\"", "")) : new File(dirImage.getParentFile(), getFileBaseName(dirImage) + "-Output");
 			splitImage(dirImage, colums, rows, out);
+			System.out.println("Done In:" + (System.currentTimeMillis() - start) + "MS");
 		}
 		else
 		{
 			System.out.println("java -jar SplitImage.jar \"Image.png\" colums rows \"(OPTIONAL) Output Directory\"");
 		}
-		System.out.println("Done In:" + (System.currentTimeMillis() - start) + "MS");
 	}
 	
 	public static void splitImage(File dirImage, int colums, int rows, File output) 
