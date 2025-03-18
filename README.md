@@ -3,6 +3,6 @@
 
  # Usage
 ```
- java -jar Image.png colums rows
- java -jar Image.png colums rows OutputDir
+ java -jar SplitImage.jar Image.png colums rows
+ java -jar SplitImage.jar Image.png colums rows OutputDir
 ```
